@@ -14,13 +14,18 @@ import java.util.Date;
 public class MainActivity extends Activity {
 
     private TextView txtDate;
+    private TextView txtDaysWork, txtHoursWork, txtMinutesWork, txtSecondsWork;
+    private TextView txtDaysWeekend, txtHoursWeekend, txtMinutesWeekend, txtSecondsWeekend;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        init();
 
 
         Thread t = new Thread() {
@@ -52,9 +57,22 @@ public class MainActivity extends Activity {
 
     }
 
+
+    private void init(){
+        txtDate = (TextView) findViewById(R.id.txtDate);
+        txtDaysWork  = (TextView) findViewById(R.id.txtDaysWork);
+        txtHoursWork = (TextView) findViewById(R.id.txtHoursWork);
+        txtMinutesWork = (TextView) findViewById(R.id.txtMinutesWork);
+        txtSecondsWork = (TextView) findViewById(R.id.txtSecondsWork);
+        txtDaysWeekend  = (TextView) findViewById(R.id.txtDaysWeekend);
+        txtHoursWeekend = (TextView) findViewById(R.id.txtHoursWeekend);
+        txtMinutesWeekend = (TextView) findViewById(R.id.txtMinutesWeekend);
+        txtSecondsWeekend = (TextView) findViewById(R.id.txtSecondsWeekend);
+    }
+
+
     private void countdown(){
 
-        txtDate = (TextView) findViewById(R.id.txtDate);
 
 
         Calendar calendar = Calendar.getInstance();
@@ -77,11 +95,11 @@ public class MainActivity extends Activity {
         int intDayNameStr = calendar.get(Calendar.DAY_OF_WEEK);
 
         txtDate.setText(formattedDate);
-        txtDate.setText(txtDate.getText() + "\n" + fullDayNameStr);
-        txtDate.setText(txtDate.getText() + "\n" + abbrDayNameStr);
-        txtDate.setText(txtDate.getText() + "\n" + intDayNameStr);
-        txtDate.setText(txtDate.getText() + "\n" + abbrMonthNameStr);
-        txtDate.setText(txtDate.getText() + "\n" + fullMonthNameStr);
+//        txtDate.setText(txtDate.getText() + "\n" + fullDayNameStr);
+//        txtDate.setText(txtDate.getText() + "\n" + abbrDayNameStr);
+//        txtDate.setText(txtDate.getText() + "\n" + intDayNameStr);
+//        txtDate.setText(txtDate.getText() + "\n" + abbrMonthNameStr);
+//        txtDate.setText(txtDate.getText() + "\n" + fullMonthNameStr);
 
         Calendar nowC = Calendar.getInstance();
         int currentDay = nowC.get(Calendar.DAY_OF_WEEK);
@@ -116,18 +134,25 @@ public class MainActivity extends Activity {
         // minutes
         long minutesLeft =  (millisLeft % (60 * 60 * 1000)) / (60 * 1000);
 
-
-        //int remainderSeconds = (int) rawQuotient % 60;
-        //int nrSeconds = (int) (rawQuotient - remainderSeconds) / 60;
-
         // outputting timeleft
-        String timeleft = Integer.toString(nrDays) + " Days " +  Integer.toString(remainderHours) + " Hours " + Long.toString(minutesLeft) + " Minutes" ;
-        txtDate.setText(txtDate.getText() + "\n" + "time left since start of workweek  : " + timeleft);
-        txtDate.setText(txtDate.getText() + "\n" + "seconds  : " + Integer.toString(secondLeftInt));
+//        String timeleft = Integer.toString(nrDays) + " Days " +  Integer.toString(remainderHours) + " Hours " + Long.toString(minutesLeft) + " Minutes" ;
+//        txtDate.setText(txtDate.getText() + "\n" + "time left since start of workweek  : " + timeleft);
+//        txtDate.setText(txtDate.getText() + "\n" + "seconds  : " + Integer.toString(secondLeftInt));
+
+        // output
+        txtDaysWork.setText(Integer.toString(nrDays));
+        txtHoursWork.setText(Integer.toString(remainderHours));
+        txtMinutesWork.setText(Long.toString(minutesLeft));
+        txtSecondsWork.setText(Integer.toString(secondLeftInt));
 
 
-        System.out.println("time left since start of workweek  : " + timeleft);
-        System.out.println("Seconds : " + Integer.toString(secondLeftInt));
+
+
+
+
+//
+//        System.out.println("time left since start of workweek  : " + timeleft);
+//        System.out.println("Seconds : " + Integer.toString(secondLeftInt));
 
 
         // calulcating time to weekend from now
@@ -139,12 +164,24 @@ public class MainActivity extends Activity {
         nrDays = (int) (rawQuotient - remainderHours) / 24 ;
         // minutes
         minutesLeft =  (millisLeft % (60 * 60 * 1000)) / (60 * 1000);
-        // outputting timeleft
-        timeleft = Integer.toString(nrDays) + " Days " +  Integer.toString(remainderHours) + " Hours " + Long.toString(minutesLeft) + " Minutes" ;
-        txtDate.setText(txtDate.getText() + "\n" + "time left since now  : " + timeleft);
-        txtDate.setText(txtDate.getText() + "\n" + "seconds  : " + Integer.toString(secondLeftInt));
 
-        System.out.println("time left since now  : " + timeleft);
+        // output
+        txtDaysWeekend.setText(Integer.toString(nrDays));
+        txtHoursWeekend.setText(Integer.toString(remainderHours));
+        txtMinutesWeekend.setText(Long.toString(minutesLeft));
+        txtSecondsWeekend.setText(Integer.toString(secondLeftInt));
+
+
+
+        // outputting timeleft
+//        timeleft = Integer.toString(nrDays) + " Days " +  Integer.toString(remainderHours) + " Hours " + Long.toString(minutesLeft) + " Minutes" ;
+//        txtDate.setText(txtDate.getText() + "\n" + "time left since now  : " + timeleft);
+//        txtDate.setText(txtDate.getText() + "\n" + "seconds  : " + Integer.toString(secondLeftInt));
+//
+//        System.out.println("time left since now  : " + timeleft);
+
+
+
 
 
     }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AlmostWeekend</string>
+    <string name="strDays">Day(s)</string>
+    <string name="strZero">00</string>
+    <string name="strHours">Hours</string>
+    <string name="strMinutes">Minutes</string>
+    <string name="strSeconds">Seconds</string>
 </resources>
