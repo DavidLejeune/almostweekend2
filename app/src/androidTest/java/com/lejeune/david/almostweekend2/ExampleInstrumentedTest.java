@@ -1,4 +1,4 @@
-package com.lejeune.david.almostweekend;
+package com.lejeune.david.almostweekend2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.lejeune.david.almostweekend", appContext.getPackageName());
+        assertEquals("com.lejeune.david.almostweekend2", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.lejeune.david.almostweekend;
+package com.lejeune.david.almostweekend2;
 
 import org.junit.Test;
 

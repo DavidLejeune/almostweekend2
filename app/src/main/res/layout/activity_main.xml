@@ -1,231 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lejeune.david.almostweekend.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91"
-        android:id="@+id/textView"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/txtDate"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    tools:context="com.lejeune.david.almostweekend2.AlmostActivity">
 
     <TextView
         android:id="@+id/txtDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/firstBar"
+        android:layout_alignLeft="@+id/firstBar"
+        android:layout_alignRight="@+id/firstBar"
+        android:layout_alignStart="@+id/firstBar"
+        android:layout_below="@+id/txtPercentage"
         android:text="txtDate"
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:textAlignment="center"
+        android:textSize="10sp" />
 
-    <TextView
-        android:id="@+id/txtDaysWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strZero"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="50dp"
-        tools:ignore="MissingConstraints"
-        android:layout_below="@+id/lblDaysWork"
-        android:layout_alignLeft="@+id/lblDaysWork"
-        android:layout_alignStart="@+id/lblDaysWork" />
-
-    <TextView
-        android:id="@+id/txtHoursWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="50dp"
-        tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
-        android:layout_below="@+id/lblHoursWork"
-        android:layout_alignLeft="@+id/lblHoursWork"
-        android:layout_alignStart="@+id/lblHoursWork" />
-
-    <TextView
-        android:id="@+id/txtMinutesWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="50dp"
-        tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
-        android:layout_below="@+id/lblMinutesWork"
-        android:layout_alignLeft="@+id/lblMinutesWork"
-        android:layout_alignStart="@+id/lblMinutesWork" />
-
-    <TextView
-        android:id="@+id/lblDaysWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strDays"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="33dp"
-        tools:ignore="MissingConstraints"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/lblHoursWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strHours"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="33dp"
-        tools:ignore="MissingConstraints"
-        android:layout_alignBaseline="@+id/lblDaysWork"
-        android:layout_alignBottom="@+id/lblDaysWork"
-        android:layout_toLeftOf="@+id/txtDate"
-        android:layout_toStartOf="@+id/txtDate" />
-
-    <TextView
-        android:id="@+id/lblMinutesWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strMinutes"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="33dp"
-        tools:ignore="MissingConstraints"
-        android:layout_alignBaseline="@+id/lblHoursWork"
-        android:layout_alignBottom="@+id/lblHoursWork"
-        android:layout_alignLeft="@+id/txtDate"
-        android:layout_alignStart="@+id/txtDate" />
-
-    <TextView
-        android:id="@+id/lblSecondsWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strSeconds"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="33dp"
-        tools:ignore="MissingConstraints"
-        android:layout_above="@+id/txtSecondsWork"
-        android:layout_toRightOf="@+id/lblMinutesWork"
-        android:layout_toEndOf="@+id/lblMinutesWork" />
 
     <TextView
         android:id="@+id/lblDaysWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:text="Day(s)"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="95dp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_below="@+id/txtDaysWork"
-        android:layout_alignLeft="@+id/txtDaysWork"
-        android:layout_alignStart="@+id/txtDaysWork"
-        android:layout_marginTop="18dp" />
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/lblHoursWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="Hours"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="95dp"
-        tools:ignore="HardcodedText,MissingConstraints"
         android:layout_alignBaseline="@+id/lblDaysWeekend"
         android:layout_alignBottom="@+id/lblDaysWeekend"
+        android:layout_toEndOf="@+id/lblDaysWeekend"
         android:layout_toRightOf="@+id/lblDaysWeekend"
-        android:layout_toEndOf="@+id/lblDaysWeekend" />
+        android:text="Hours"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/lblMinutesWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="Minutes"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="95dp"
-        tools:ignore="HardcodedText,MissingConstraints"
         android:layout_alignBaseline="@+id/lblHoursWeekend"
         android:layout_alignBottom="@+id/lblHoursWeekend"
+        android:layout_toEndOf="@+id/lblHoursWeekend"
         android:layout_toRightOf="@+id/lblHoursWeekend"
-        android:layout_toEndOf="@+id/lblHoursWeekend" />
+        android:text="Minutes"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/lblSecondsWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="Seconds"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="95dp"
-        tools:ignore="HardcodedText,MissingConstraints"
         android:layout_alignBaseline="@+id/lblMinutesWeekend"
         android:layout_alignBottom="@+id/lblMinutesWeekend"
-        android:layout_alignLeft="@+id/txtSecondsWork"
-        android:layout_alignStart="@+id/txtSecondsWork" />
+        android:layout_toEndOf="@+id/lblMinutesWeekend"
+        android:layout_toRightOf="@+id/lblMinutesWeekend"
+        android:text="Seconds"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/txtDaysWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_below="@+id/lblDaysWeekend"
         android:layout_alignLeft="@+id/lblDaysWeekend"
-        android:layout_alignStart="@+id/lblDaysWeekend" />
+        android:layout_alignStart="@+id/lblDaysWeekend"
+        android:layout_below="@+id/lblDaysWeekend"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/txtHoursWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_below="@+id/lblHoursWeekend"
-        android:layout_alignLeft="@+id/lblHoursWeekend"
-        android:layout_alignStart="@+id/lblHoursWeekend" />
+        android:layout_alignBaseline="@+id/txtMinutesWeekend"
+        android:layout_alignBottom="@+id/txtMinutesWeekend"
+        android:layout_toEndOf="@+id/lblDaysWeekend"
+        android:layout_toRightOf="@+id/lblDaysWeekend"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/txtMinutesWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="HardcodedText,MissingConstraints"
         android:layout_below="@+id/lblMinutesWeekend"
-        android:layout_alignLeft="@+id/lblMinutesWeekend"
-        android:layout_alignStart="@+id/lblMinutesWeekend" />
+        android:layout_toEndOf="@+id/lblHoursWeekend"
+        android:layout_toRightOf="@+id/lblHoursWeekend"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/txtSecondsWeekend"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="00"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_below="@+id/lblSecondsWeekend"
-        android:layout_alignLeft="@+id/lblSecondsWeekend"
-        android:layout_alignStart="@+id/lblSecondsWeekend" />
+        android:layout_alignTop="@+id/txtMinutesWeekend"
+        android:layout_toEndOf="@+id/txtMinutesWeekend"
+        android:layout_toRightOf="@+id/txtMinutesWeekend"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="32sp" />
+
+    <ProgressBar
+        android:id="@+id/firstBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtSecondsWeekend"
+        android:layout_alignLeft="@+id/txtDaysWeekend"
+        android:layout_alignRight="@+id/txtSecondsWeekend"
+        android:layout_alignStart="@+id/txtDaysWeekend"
+        android:layout_below="@+id/txtDaysWeekend"
+        android:layout_marginTop="89dp"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="27dp" />
 
     <TextView
-        android:id="@+id/txtSecondsWork"
+        android:id="@+id/txtPercentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txtMinutesWork"
-        android:layout_alignLeft="@+id/lblSecondsWork"
-        android:layout_alignStart="@+id/lblSecondsWork"
-        android:text="00"
-        tools:ignore="HardcodedText" />
+        android:layout_alignBottom="@+id/firstBar"
+        android:layout_alignEnd="@+id/firstBar"
+        android:layout_alignLeft="@+id/firstBar"
+        android:layout_alignRight="@+id/firstBar"
+        android:layout_alignStart="@+id/firstBar"
+        android:layout_marginBottom="15dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+
 
 </android.widget.RelativeLayout>
